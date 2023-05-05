@@ -122,7 +122,6 @@ function rtclickcheck(keyp) {
   }
 
   if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) {
-    alert(message);
     return false;
   }
 }
