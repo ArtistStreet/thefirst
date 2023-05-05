@@ -37,12 +37,7 @@ var typed = new Typed(".typing", {
   backSpeed: 200,
   loop: true,
 });
-var typed = new Typed(".typing2", {
-  strings: ['"THE FIRST"'],
-  typeSpeed: 200,
-  backSpeed: 200,
-  loop: false,
-});
+
 const a = new IntersectionObserver((entries) => {
   entries.forEach((entry) => {
     console.log(entry);
@@ -63,17 +58,15 @@ hidden.forEach((el) => a.observe(el));
 
 const svg = document.querySelector(".svg");
 const body = document.querySelector("body");
+
 window.onload = function () {
   body.style.overflow = "hidden";
-
   setTimeout(function () {
     svg.style.display = "none";
     body.style.overflowY = "auto";
   }, 3000);
 };
-window.onbeforeunload = function () {
-  window.scrollTo(0, 0);
-};
+
 const letters = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
 
 let interval = null;
@@ -102,35 +95,46 @@ document.querySelector("h1").onmouseover = (event) => {
     iteration += 1 / 3;
   }, 30);
 };
-// document.addEventListener("keydown", function (event) {
-//   if (event.ctrlKey) {
-//     alert(message);
-//     event.preventDefault();
+// $(document).keydown(function (e) {
+//   switch (e.which) {
+//     case 17: // left
+//       var href = $("#previous").attr("href");
+//       window.location.href = href;
+//       break;
 //   }
+//   e.preventDefault();
 // });
+document.addEventListener("keydown", function (event) {
+  if (event.ctrlKey) {
+    event.preventDefault();
 
-// var message = "souces code in my github ";
+    var href = $("#previous").attr("href");
+    window.location.href = href;
+  }
+});
 
-// function rtclickcheck(keyp) {
-//   if (navigator.appName == "Netscape" && keyp.which == 3) {
-//     alert(message);
-//     return false;
-//   }
+var message = "souces code in my github ";
 
-//   if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) {
-//     alert(message);
-//     return false;
-//   }
-// }
+function rtclickcheck(keyp) {
+  if (navigator.appName == "Netscape" && keyp.which == 3) {
+    var href = $("#previous").attr("href");
+    window.location.href = href;
+  }
 
-// document.onmousedown = rtclickcheck;
+  if (navigator.appVersion.indexOf("MSIE") != -1 && event.button == 2) {
+    alert(message);
+    return false;
+  }
+}
 
-// document.onmousedown = rtclickcheck;
-// function mousehandler(e) {
-//   var myevent = isNS ? e : event;
-//   var eventbutton = isNS ? myevent.which : myevent.button;
-//   if (eventbutton == 2 || eventbutton == 3) return false;
-// }
+document.onmousedown = rtclickcheck;
+
+document.onmousedown = rtclickcheck;
+function mousehandler(e) {
+  var myevent = isNS ? e : event;
+  var eventbutton = isNS ? myevent.which : myevent.button;
+  if (eventbutton == 2 || eventbutton == 3) return false;
+}
 // const text = document.querySelector(".text p");
 // text.innerHTML = text.innerText
 //   .split("")
