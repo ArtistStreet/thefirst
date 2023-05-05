@@ -19,6 +19,7 @@ body{
    font-family: 'Ubuntu', sans-serif;
     scrollbar-width: thin;
   scrollbar-color: var(--thumbBG) var(--scrollbarBG);
+  overflow: hidden;
 }
 body::-webkit-scrollbar {
     width: 11px;

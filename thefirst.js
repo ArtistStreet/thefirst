@@ -60,7 +60,6 @@ const svg = document.querySelector(".svg");
 const body = document.querySelector("body");
 
 window.onload = function () {
-  body.style.overflow = "hidden";
   setTimeout(function () {
     svg.style.display = "none";
     body.style.overflowY = "auto";
