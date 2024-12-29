@@ -1,0 +1,16 @@
+clear Lock
+keycode 66 = Mode_switch
+keycode 31 = i I i I
+keycode 44 = j J j J
+keycode 45 = k K k K
+keycode 46 = l L l L
+keycode 113 = Left
+keycode 114 = Right
+keycode 116 = Down
+keycode 111 = Up
+add Lock = Caps_Lock
+
+keysym i = i I Up
+keysym j = j J Left
+keysym k = k K Down
+keysym l = l L Right
